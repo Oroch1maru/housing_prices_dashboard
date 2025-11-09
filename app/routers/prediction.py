@@ -29,7 +29,7 @@ async def predict(request: PredictionRequest,token_data: dict = Depends(verify_t
     rate_limiter.check_rate_limit(username)
 
     try:
-        result_prediction=model_service.predict(request.dict())
+        result_prediction=model_service.predict(request.model_dump())
         return PredictionResponse(predicted_price=result_prediction)
     except Exception as e:
         raise HTTPException(
