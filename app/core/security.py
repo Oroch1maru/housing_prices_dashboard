@@ -68,4 +68,13 @@ def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)) 
         return payload
 
     except jwt.ExpiredSignatureError:
-        logging.warning('Token is expired!')
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=str("Token is expired!")
+        )
+
+    except jwt.PyJWTError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail=str("Incorrect token")
+        )
