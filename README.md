@@ -16,7 +16,7 @@ To run the application locally (without Docker):
 You must have Python version 3.9.
 
 ```
-git clone https://github.com/mach1n1st/housing-api.git
+git clone https://github.com/Oroch1maru/housing_prices_dashboard.git
 cd housing-api
 
 pip install --upgrade pip
