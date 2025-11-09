@@ -63,3 +63,11 @@ To stop the server: _CTRL + C_ and prescribe the command
 ```
 docker-compose down
 ```
+
+## Description of CI/CD
+
+Each push to this repository triggers a pipeline that has two stages: testing and building. 
+
+During the testing stage, written tests are run to verify the correctness of authorization and prediction. 
+
+During the building stage, an image is created, which is then pushed to Docker Hub.
